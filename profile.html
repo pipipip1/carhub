@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub - Профиль</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">CarHub</a>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu">
+        <a href="profile.html" class="menu-item">Профиль</a>
+        <a href="index.html" class="menu-item">Фильтр</a>
+        <a href="login.html" class="menu-item">Вход/Регистрация</a>
+    </nav>
+
+    <main class="profile-main">
+        <div class="profile-header">
+            <h1>Профиль пользователя</h1>
+            <p id="userEmail" class="user-email"></p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-value" id="totalRentals">0</span>
+                <span class="stat-label">Всего аренд</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="totalSpent">0 ₽</span>
+                <span class="stat-label">Потрачено</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="totalDays">0</span>
+                <span class="stat-label">Дней в аренде</span>
+            </div>
+        </div>
+
+        <a href="admin.html" class="admin-profile-link" id="adminProfileLink" style="display:none">Панель администратора</a>
+
+        <div class="rentals-section">
+            <h2>История аренд</h2>
+            <div class="rentals-list" id="rentalsList">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CarHub</h4>
+                <p>Современный сервис каршеринга</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>Car.Hub@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Адрес</h4>
+                <p>г. Энгельс, ул. Ленина, 15</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

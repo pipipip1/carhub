@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub - Администрирование</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">CarHub</a>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu">
+        <a href="index.html" class="menu-item">Каталог</a>
+        <a href="profile.html" class="menu-item">Профиль</a>
+        <a href="login.html" class="menu-item">Вход/Регистрация</a>
+    </nav>
+
+    <main class="admin-main">
+        <h1 class="admin-title">Панель администратора</h1>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="cars">Автомобили</button>
+            <button class="admin-tab" data-tab="users">Пользователи</button>
+            <button class="admin-tab" data-tab="bookings">Бронирования</button>
+            <button class="admin-tab" data-tab="content">Контент</button>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-panel active" id="tab-cars">
+                <div class="panel-header">
+                    <h2>Управление автомобилями</h2>
+                    <button class="admin-btn admin-btn-primary" id="addCarBtn">+ Добавить автомобиль</button>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Марка</th>
+                                <th>Модель</th>
+                                <th>Год</th>
+                                <th>Цена</th>
+                                <th>Тип</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carsList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-panel" id="tab-users">
+                <div class="panel-header">
+                    <h2>Управление пользователями</h2>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Номер прав</th>
+                                <th>Дата регистрации</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-panel" id="tab-bookings">
+                <div class="panel-header">
+                    <h2>Управление бронированиями</h2>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Автомобиль</th>
+                                <th>Пользователь</th>
+                                <th>Даты</th>
+                                <th>Сумма</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsList"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-panel" id="tab-content">
+                <div class="panel-header">
+                    <h2>Управление контентом</h2>
+                </div>
+                <div class="admin-content-form">
+                    <div class="content-section">
+                        <h3>Контактная информация</h3>
+                        <div class="content-field">
+                            <label>Адрес</label>
+                            <input type="text" id="contentAddress">
+                        </div>
+                        <div class="content-field">
+                            <label>Телефон</label>
+                            <input type="text" id="contentPhone">
+                        </div>
+                        <div class="content-field">
+                            <label>Email</label>
+                            <input type="email" id="contentEmail">
+                        </div>
+                        <button class="admin-btn admin-btn-primary" id="saveContactBtn">Сохранить контакты</button>
+                    </div>
+                    <div class="content-section">
+                        <h3>Баннеры и акции</h3>
+                        <div class="content-field">
+                            <label>Текст на главном баннере</label>
+                            <input type="text" id="contentBanner">
+                        </div>
+                        <div class="content-field">
+                            <label>Текст акции</label>
+                            <textarea id="contentPromo" rows="3"></textarea>
+                        </div>
+                        <button class="admin-btn admin-btn-primary" id="saveContentBtn">Сохранить контент</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="carModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Добавить автомобиль</h3>
+                <span class="modal-close" id="modalClose">&times;</span>
+            </div>
+            <form id="carForm">
+                <input type="hidden" id="carId">
+                <div class="modal-grid">
+                    <div class="form-group">
+                        <label>Марка</label>
+                        <input type="text" id="formBrand" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Модель</label>
+                        <input type="text" id="formModel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Год выпуска</label>
+                        <input type="number" id="formYear" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Цена (руб/день)</label>
+                        <input type="number" id="formPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Лошадиные силы</label>
+                        <input type="number" id="formHp" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Тип кузова</label>
+                        <select id="formType">
+                            <option value="Седан">Седан</option>
+                            <option value="Кроссовер">Кроссовер</option>
+                            <option value="Хэтчбек">Хэтчбек</option>
+                            <option value="Универсал">Универсал</option>
+                            <option value="Купе">Купе</option>
+                            <option value="Минивэн">Минивэн</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Двигатель</label>
+                        <input type="text" id="formEngine" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Коробка передач</label>
+                        <input type="text" id="formTransmission" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Цвет</label>
+                        <input type="text" id="formColor" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Описание</label>
+                        <textarea id="formDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Ссылки на изображения (по одной на строку)</label>
+                        <textarea id="formImages" rows="3" placeholder="images/car_1.jpg"></textarea>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="admin-btn admin-btn-secondary" id="modalCancel">Отмена</button>
+                    <button type="submit" class="admin-btn admin-btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CarHub</h4>
+                <p>Современный сервис каршеринга</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>Car.Hub@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Адрес</h4>
+                <p>г. Энгельс, ул. Ленина, 15</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

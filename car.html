@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub - Автомобиль</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/car-page.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">CarHub</a>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu">
+        <a href="profile.html" class="menu-item">Профиль</a>
+        <a href="index.html" class="menu-item">Фильтр</a>
+        <a href="login.html" class="menu-item">Вход/Регистрация</a>
+    </nav>
+
+    <main class="car-main">
+        <div class="car-image-gallery">
+            <button class="gallery-btn gallery-prev" id="prevBtn">&#10094;</button>
+            <div class="gallery-image-container">
+                <img id="carImage" src="" alt="">
+            </div>
+            <button class="gallery-btn gallery-next" id="nextBtn">&#10095;</button>
+            <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+
+        <div class="car-details">
+            <h1 id="carTitle" class="car-title"></h1>
+            <div class="car-price-block">
+                <span class="car-price-label">Цена за день:</span>
+                <span id="carPrice" class="car-price"></span>
+            </div>
+            
+            <div class="car-description">
+                <h3>Описание</h3>
+                <p id="carDescription"></p>
+            </div>
+
+            <div class="car-specs">
+                <h3>Характеристики</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-label">Марка</span>
+                        <span id="specBrand" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Модель</span>
+                        <span id="specModel" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Год</span>
+                        <span id="specYear" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Тип кузова</span>
+                        <span id="specType" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Двигатель</span>
+                        <span id="specEngine" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Мощность</span>
+                        <span id="specHp" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Коробка передач</span>
+                        <span id="specTransmission" class="spec-value"></span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Цвет</span>
+                        <span id="specColor" class="spec-value"></span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="rent-btn" id="rentBtn">Забронировать</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CarHub</h4>
+                <p>Современный сервис каршеринга</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>Car.Hub@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Адрес</h4>
+                <p>г. Энгельс, ул. Ленина, 15</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/car-page.js"></script>
+</body>
+</html>

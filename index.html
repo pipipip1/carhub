@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub - Каршеринг автомобилей</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">CarHub</div>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu">
+        <a href="profile.html" class="menu-item">Профиль</a>
+        <a href="#" class="menu-item" id="filterBtn">Фильтр</a>
+        <a href="login.html" class="menu-item">Вход/Регистрация</a>
+    </nav>
+
+    <div class="filter-panel" id="filterPanel">
+        <div class="filter-header">
+            <h3>Фильтр</h3>
+            <button class="close-filter" id="closeFilter">&times;</button>
+        </div>
+        <div class="filter-content">
+            <div class="filter-group">
+                <label>Марка</label>
+                <select id="filterBrand">
+                    <option value="">Все</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="Bugatti">Bugatti</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Цена до (руб/день)</label>
+                <input type="number" id="filterPrice" placeholder="Макс. цена">
+            </div>
+            <div class="filter-group">
+                <label>Лошадиные силы до</label>
+                <input type="number" id="filterHp" placeholder="Макс. л.с.">
+            </div>
+            <div class="filter-group">
+                <label>Тип автомобиля</label>
+                <select id="filterType">
+                    <option value="">Все</option>
+                    <option value="Седан">Седан</option>
+                    <option value="Кроссовер">Кроссовер</option>
+                    <option value="Хэтчбек">Хэтчбек</option>
+                    <option value="Универсал">Универсал</option>
+                    <option value="Купе">Купе</option>
+                    <option value="Минивэн">Минивэн</option>
+                </select>
+            </div>
+            <button class="apply-filter" id="applyFilter">Применить</button>
+            <button class="reset-filter" id="resetFilter">Сбросить</button>
+        </div>
+    </div>
+
+    <main class="main">
+        <h1 class="page-title">Доступные автомобили</h1>
+        <div class="cars-grid" id="carsGrid">
+        </div>
+        <div class="pagination" id="pagination">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CarHub</h4>
+                <p>Современный сервис каршеринга</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>Car.Hub@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Адрес</h4>
+                <p>г. Энгельс, ул. Ленина, 15</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

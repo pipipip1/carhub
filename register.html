@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub - Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">CarHub</a>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="menu" id="menu">
+        <a href="profile.html" class="menu-item">Профиль</a>
+        <a href="index.html" class="menu-item">Фильтр</a>
+        <a href="login.html" class="menu-item">Вход/Регистрация</a>
+    </nav>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <h1 class="auth-title">Регистрация</h1>
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" placeholder="Введите email" required>
+                </div>
+                <div class="form-group">
+                    <label for="licenseNumber">Номер водительских прав</label>
+                    <input type="text" id="licenseNumber" placeholder="Введите номер прав" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" placeholder="Введите пароль" required>
+                </div>
+                <a href="login.html" class="auth-link-small">Уже есть аккаунт? Войти</a>
+                <button type="submit" class="auth-btn">Зарегистрироваться</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CarHub</h4>
+                <p>Современный сервис каршеринга</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>+7 (999) 123-45-67</p>
+                <p>Car.Hub@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Адрес</h4>
+                <p>г. Энгельс, ул. Ленина, 15</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
